@@ -1,25 +1,41 @@
 import tkinter as tk
 
 ventana = tk.Tk()
-ventana.geometry("400x300")
+ventana.title("Calculadora")
 
-entrada = tk.Entry(ventana)
-entrada.pack(pady=5)
+# ■ .frame = contenedor para los botones
+# ■ metodos
+contenedor1 = tk.Frame(ventana)
+contenedor1.pack()
 
-def calcular():
-    try:
-        resultado = eval(entrada.get())
-        entrada.delete(0, tk.END)
-        entrada.insert(0, str(resultado))
-    except Exception as e:
-        entrada.delete(0, tk.END)
-        entrada.insert(0, "Error")
-        
-boton_calcular = tk.Button(ventana, text="=", command=calcular)
-boton_calcular.pack(pady=5)
+tk.Button(contenedor1, text="7").pack(side=tk.LEFT)
+tk.Button(contenedor1, text="8").pack(side=tk.LEFT)
+tk.Button(contenedor1, text="9").pack(side=tk.LEFT)
+tk.Button(contenedor1, text="/").pack(side=tk.LEFT)
 
+contenedor2 = tk.Frame(ventana)
+contenedor2.pack()
+tk.Button(contenedor2, text="4").pack(side=tk.LEFT)
+tk.Button(contenedor2, text="5").pack(side=tk.LEFT)
+tk.Button(contenedor2, text="6").pack(side=tk.LEFT)
+tk.Button(contenedor2, text="*").pack(side=tk.LEFT)
 
-boton_salir = tk.Button(ventana, text="AC", command=ventana.quit)
-boton_salir.pack(pady=5)
+contenedor3 = tk.Frame(ventana)
+contenedor3.pack()
+tk.Button(contenedor3, text="1").pack(side=tk.LEFT)
+tk.Button(contenedor3, text="2").pack(side=tk.LEFT)
+tk.Button(contenedor3, text="3").pack(side=tk.LEFT)
+tk.Button(contenedor3, text="-").pack(side=tk.LEFT)
+
+contenedor4 = tk.Frame(ventana)
+contenedor4.pack()
+tk.Button(contenedor4, text="0").pack(side=tk.LEFT)
+tk.Button(contenedor4, text=".").pack(side=tk.LEFT)
+tk.Button(contenedor4, text="=").pack(side=tk.LEFT)
+tk.Button(contenedor4, text="+").pack(side=tk.LEFT)
+
+fila5 = tk.Frame(ventana)
+fila5.pack()
+tk.Button(fila5, text="C").pack()
 
 ventana.mainloop()
