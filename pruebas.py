@@ -4,19 +4,19 @@ ventana = tk.Tk()
 ventana.title("Mi primera ventana")
 ventana.geometry("300x200")
 
-etiqueta = tk.Label(ventana, text="¡Escribe tu nombre!", font=("Arial", 12, "bold"))
-etiqueta.pack(pady=5)
+etiqueta_label = tk.Label(ventana, text="¡Escribe tu nombre!", font=("Arial", 12, "bold"))
+etiqueta_label.pack(pady=5)
 
 entrada = tk.Entry(ventana)
 entrada.pack(pady=5)
 
 def saludar() :
   nombre = entrada.get()
-  etiqueta.config(text=f"¡Hola, {nombre}!")
+  etiqueta_label.config(text=f"¡Hola, {nombre}!")
   
 def limpiar() :
   entrada.delete(0, tk.END)
-  etiqueta.config(text="¡Escribe tu nombre!")
+  etiqueta_label.config(text="¡Escribe tu nombre!")
   
 boton_saludar = tk.Button(ventana, text="Saludar", command=saludar)
 boton_saludar.pack(pady=5)

@@ -1,41 +1,86 @@
 import tkinter as tk
 
 ventana = tk.Tk()
-ventana.title("Calculadora")
-ventana.geometry("400x400")
+ventana.title("Mi primera calculadora")
+ventana.geometry("400x600")
 
-# ■ .frame = contenedor para los botones
-contenedor1 = tk.Frame(ventana)
-contenedor1.pack()
+label1 = tk.Label(ventana, text="¡Primer numero!", font=("Arial", 12, "bold"))
+label1.pack(pady=5)
+entrada1 = tk.Entry(ventana)
+entrada1.pack(pady=5)
 
-tk.Button(contenedor1, text="7").pack(side=tk.LEFT)
-tk.Button(contenedor1, text="8").pack(side=tk.LEFT)
-tk.Button(contenedor1, text="9").pack(side=tk.LEFT)
-tk.Button(contenedor1, text="/").pack(side=tk.LEFT)
+label2 = tk.Label(ventana, text="¡Segundo numero!", font=("Arial", 12, "bold"))
+label2.pack(pady=5)
+entrada2 = tk.Entry(ventana)
+entrada2.pack(pady=5)
 
-contenedor2 = tk.Frame(ventana)
-contenedor2.pack()
-tk.Button(contenedor2, text="4").pack(side=tk.LEFT)
-tk.Button(contenedor2, text="5").pack(side=tk.LEFT)
-tk.Button(contenedor2, text="6").pack(side=tk.LEFT)
-tk.Button(contenedor2, text="*").pack(side=tk.LEFT)
+label_resultado = tk.Label(ventana, text="Resultado:", font=("sans-serif", 12))
+label_resultado.pack(pady=5)
 
-contenedor3 = tk.Frame(ventana)
-contenedor3.pack()
-tk.Button(contenedor3, text="1").pack(side=tk.LEFT)
-tk.Button(contenedor3, text="2").pack(side=tk.LEFT)
-tk.Button(contenedor3, text="3").pack(side=tk.LEFT)
-tk.Button(contenedor3, text="-").pack(side=tk.LEFT)
+def Sumar() :
+  num1 = entrada1.get()
+  entrada1.config(text=f"primer numero, {num1}!")
+  
+  num2 = entrada2.get()
+  entrada2.config(text=f"segundo numero, {num2}!")
 
-contenedor4 = tk.Frame(ventana)
-contenedor4.pack()
-tk.Button(contenedor4, text="0").pack(side=tk.LEFT)
-tk.Button(contenedor4, text=".").pack(side=tk.LEFT)
-tk.Button(contenedor4, text="=").pack(side=tk.LEFT)
-tk.Button(contenedor4, text="+").pack(side=tk.LEFT)
+  resultado = float(num1) + float(num2)
+  label_resultado.config(text=f"Resultado: {resultado}")
 
-contenedor5 = tk.Frame(ventana)
-contenedor5.pack()
-tk.Button(contenedor5, text="C").pack()
+def Restar() :
+  num1 = entrada1.get()
+  entrada1.config(text=f"primer numero, {num1}!")
+  
+  num2 = entrada2.get()
+  entrada2.config(text=f"segundo numero, {num2}!")
+
+  resultado = float(num1) - float(num2)
+
+  label_resultado.config(text=f"Resultado: {resultado}")
+
+def Multiplicar() :
+  num1 = entrada1.get()
+  entrada1.config(text=f"primer numero, {num1}!")
+  
+  num2 = entrada2.get()
+  entrada2.config(text=f"segundo numero, {num2}!")
+
+  resultado = float(num1) * float(num2)
+  label_resultado.config(text=f"Resultado: {resultado}")
+
+def Dividir() :
+  num1 = entrada1.get()
+  entrada1.config(text=f"primer numero, {num1}!")
+  
+  num2 = entrada2.get()
+  entrada2.config(text=f"segundo numero, {num2}!")
+
+  if float(num2) != 0:
+    resultado = float(num1) / float(num2)
+  else:
+    resultado = "Error: División por cero no permitida."
+
+  label_resultado.config(text=f"Resultado: {resultado}")
+  
+  
+def limpiar() :
+  entrada1.delete(0, tk.END)
+  entrada2.delete(0, tk.END)
+  label_resultado.config(text="Resultado:")
+  
+boton_saludar = tk.Button(ventana, text="Sumar", command=Sumar)
+boton_saludar.pack(pady=5)
+boton_saludar = tk.Button(ventana, text="Restar", command=Restar)
+boton_saludar.pack(pady=5)
+boton_saludar = tk.Button(ventana, text="Multiplicar", command=Multiplicar)
+boton_saludar.pack(pady=5)
+boton_saludar = tk.Button(ventana, text="Dividir", command=Dividir)
+boton_saludar.pack(pady=5)
+
+boton_limpiar = tk.Button(ventana, text="Limpiar", command=limpiar)
+boton_limpiar.pack(pady=5)
+
+boton_salir = tk.Button(ventana, text="Salir", command=ventana.quit)
+boton_salir.pack(pady=5)
 
 ventana.mainloop()
