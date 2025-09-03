@@ -5,7 +5,7 @@ ventana.title("Mi primera ventana")
 ventana.geometry("300x200")
 
 etiqueta = tk.Label(ventana, text="¡Escribe tu nombre!", font=("Arial", 12, "bold"))
-etiqueta.pack(pady=35)
+etiqueta.pack(pady=5)
 
 entrada = tk.Entry(ventana)
 entrada.pack(pady=5)

@@ -2,6 +2,7 @@ import tkinter as tk
 
 ventana = tk.Tk()
 ventana.title("Calculadora")
+ventana.geometry("400x400")
 
 # ■ .frame = contenedor para los botones
 contenedor1 = tk.Frame(ventana)
@@ -33,8 +34,8 @@ tk.Button(contenedor4, text=".").pack(side=tk.LEFT)
 tk.Button(contenedor4, text="=").pack(side=tk.LEFT)
 tk.Button(contenedor4, text="+").pack(side=tk.LEFT)
 
-fila5 = tk.Frame(ventana)
-fila5.pack()
-tk.Button(fila5, text="C").pack()
+contenedor5 = tk.Frame(ventana)
+contenedor5.pack()
+tk.Button(contenedor5, text="C").pack()
 
 ventana.mainloop()
