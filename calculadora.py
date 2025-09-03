@@ -67,19 +67,28 @@ def limpiar() :
   entrada1.delete(0, tk.END)
   entrada2.delete(0, tk.END)
   label_resultado.config(text="Resultado:")
-  
-boton_saludar = tk.Button(ventana, text="Sumar", command=Sumar)
-boton_saludar.pack(pady=5)
-boton_saludar = tk.Button(ventana, text="Restar", command=Restar)
-boton_saludar.pack(pady=5)
-boton_saludar = tk.Button(ventana, text="Multiplicar", command=Multiplicar)
-boton_saludar.pack(pady=5)
-boton_saludar = tk.Button(ventana, text="Dividir", command=Dividir)
-boton_saludar.pack(pady=5)
 
+# Boton sumar
+boton_sumar = tk.Button(ventana, text="Sumar", command=Sumar)
+boton_sumar.pack(pady=5)
+
+# Boton restar
+boton_restar = tk.Button(ventana, text="Restar", command=Restar)
+boton_restar.pack(pady=5)
+
+# Boton multiplicar
+boton_multiplicar = tk.Button(ventana, text="Multiplicar", command=Multiplicar)
+boton_multiplicar.pack(pady=5)
+
+# Boton dividir
+boton_dividir = tk.Button(ventana, text="Dividir", command=Dividir)
+boton_dividir.pack(pady=5)
+
+# Boton limpiar
 boton_limpiar = tk.Button(ventana, text="Limpiar", command=limpiar)
 boton_limpiar.pack(pady=5)
 
+# Boton salir
 boton_salir = tk.Button(ventana, text="Salir", command=ventana.quit)
 boton_salir.pack(pady=5)
 
