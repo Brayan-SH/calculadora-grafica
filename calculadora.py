@@ -4,7 +4,6 @@ ventana = tk.Tk()
 ventana.title("Calculadora")
 
 # ■ .frame = contenedor para los botones
-# ■ metodos
 contenedor1 = tk.Frame(ventana)
 contenedor1.pack()
 
